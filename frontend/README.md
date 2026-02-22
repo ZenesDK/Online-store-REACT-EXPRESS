@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# TechStore — Интернет-магазин электроники
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Проект выполнен в рамках практического занятия №4 по курсу «Фронтенд и бэкенд разработка». Это полноценное веб-приложение на стеке **React + Express**, реализующее CRUD-операции для товаров интернет-магазина.
 
-## Available Scripts
+## 📋 Функциональность
+- Просмотр списка товаров (не менее 10)
+- Добавление нового товара
+- Редактирование существующего товара
+- Удаление товара
+- Карточка товара содержит: название, категорию, описание, цену, количество на складе, рейтинг
+- Адаптивный дизайн, стилизация на SASS (переменные, миксины, вложенность)
 
-In the project directory, you can run:
+## 🛠 Технологии
+**Бэкенд:**
+- Node.js + Express
+- CORS
+- nanoid (генерация уникальных ID)
 
-### `npm start`
+**Фронтенд:**
+- React
+- Axios (HTTP-клиент)
+- SASS (препроцессор)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📁 Структура проекта
+```
+techstore/
+├── backend/                # Серверная часть
+│   ├── server.js
+│   ├── package.json
+│   └── node_modules/
+├── frontend/               # Клиентская часть (React)
+│   ├── public/
+│   │   ├── css/            # скомпилированный CSS
+│   │   └── index.html
+│   ├── src/
+│   │   ├── api/            # axios‑клиент
+│   │   ├── components/     # React‑компоненты
+│   │   ├── pages/          # страницы
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── index.css
+│   ├── package.json
+│   └── node_modules/
+└── README.md
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Запуск проекта
 
-### `npm test`
+### Предварительные требования
+- Установленные [Node.js](https://nodejs.org/) и npm
+- Порт 3000 (бэкенд) и 3001 (фронтенд) должны быть свободны
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1️⃣ Запуск бэкенда
+```bash
+cd backend
+npm install          # установка зависимостей
+npm run dev          # запуск сервера с авто‑перезагрузкой (nodemon)
+```
+Сервер будет доступен по адресу `http://localhost:3000`.
 
-### `npm run build`
+### 2️⃣ Запуск фронтенда
+Откройте новый терминал:
+```bash
+cd frontend
+npm install          # установка зависимостей
+npm run dev          # компиляция SASS и запуск React
+```
+После успешного запуска откройте `http://localhost:3001` в браузере.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📝 Примечания
+- CORS настроен на приём запросов только с `http://localhost:3001`
+- В начальной базе данных уже есть 10 товаров для демонстрации
+- Для компиляции SASS используется команда `npm run sass` (автоматически выполняется при `npm run dev`)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📦 Деплой на GitHub
+Репозиторий содержит полный код проекта. Для клонирования:
+```bash
+git clone https://github.com/ZenesDK/Online-store-REACT-EXPRESS
+# следуйте инструкциям выше для запуска
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
